@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Layer Opacity Test</title>
+  <script type="text/javascript" src="../../svg-in-html.js"></script>
+  <script type="text/javascript">
+    function main() {
+      var svg = new tq84.SVGinHTML('svg');
+
+
+
+
+   //  Create the <animation> with begin="indefinite" so that it won't treat the
+   //    animation as starting on document load. You can do this either via
+   //    JavaScript or raw SVG source.
+
+   //  Call beginElement() on the SVGAnimationElement instance (the <animate>
+   //      element) when you're ready for the animation to start. For your use
+   //    case, use a standard addEventListener() callback to invoke this method
+   //   when you're ready, e.g.
+
+    // myAnimationElement.addEventListener('mySpecialEvent',function(){
+    //   myAnimationElement.beginElement();
+    // },false);
+
+
+      var r = svg.svg.getSVGDocument().rootElement;
+
+      for (k in r) {
+//      alert(k);
+        document.body.innerHTML += "<br>" + k + " : " + r[k];
+      }
+    }
+  </script>
+</head>
+<body onload='main()'>
+
+  <object id='svg' type="image/svg+xml" data="layers.svg"></object>
+
+</body>
+</html>
